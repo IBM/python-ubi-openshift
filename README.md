@@ -14,7 +14,7 @@ This code pattern is part of the Bee Travels project that focuses on deploying a
 
 This flow is for the runtime of the currency conversion microservice.
 
-![run time flow](doc/source/images/architecture.jpg)
+![run time flow](doc/images/architecture.jpg)
 
 
 ***Figure 1. Production flow***
