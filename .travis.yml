@@ -1,0 +1,9 @@
+language: python
+sudo: false
+python:
+  - 36
+jobs:
+  include:
+    - stage: "testing"
+      name: "Pytest testing"
+      script: pipenv install && pipenv install --dev && pipenv shell && pytest -v
