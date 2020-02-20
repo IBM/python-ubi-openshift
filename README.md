@@ -172,6 +172,17 @@ Successfully built 3b5631170697
 Successfully tagged <DOCKERHUB_USERNAME>/currencyexchange-py:v0.0.1
 ```
 
+Notes:
+
+* The docker build process, pulled the RedHat 8 Universal Base Image from the redhat registry.
+
+* The base image is the generic image, i.e. ubi8/ubi.  We could have use the Python 3 language specic flavor of the image but opted for this version for 2 reasons:
+
+1. to show off the yum install features
+
+1. to show how a finer controlled version of the language could have been used, like in our case the latest version (at the time of writing) of Python version 3.8 (note to check docker file version to be sure!)
+
+
 </details>
 
 Great! So, now lets run the image locally!
@@ -312,11 +323,16 @@ After provisioning your OpenShift cluster, click on the blue `OpenShift web cons
 
 ![2 ways to connect to OpenShift cluster](doc/images/OpenShift-connection-to-cluster-2-ways.png)
 
-
+***instructions to be put here, pending OpenShift 4 (beta) invalid name issue(s) resolution on bee-travels-python site first***
 
 
 # Resources
-tbd
+[Introducing the Red Hat Universal Base Image ](https://www.redhat.com/en/blog/introducing-red-hat-universal-base-image) - blog by Scott McCarty
+
+[Python Testing with pytest: Simple, Rapid, Effective, and Scalable.](https://pragprog.com/book/bopytest/python-testing-with-pytest) Okken, Brian. Pragmatic Bookshelf.
+
+[docs on flask-restplus](https://pypi.org/project/flask-restplus/)
+
 
 ## License
 
