@@ -1,0 +1,4 @@
+flask
+flask-restplus
+werkzeug~=0.16.0
+pytest

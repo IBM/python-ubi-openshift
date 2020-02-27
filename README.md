@@ -1,23 +1,22 @@
 #  Deploy an application to Openshift 4 using Redhat's universal base image
 
-This code pattern is part of the Bee Travels project that focuses on deploying a python currency exchange application to Openshift 4 using Redhat's universal base image
+This code pattern is part of the [Bee Travels project](https://github.com/bee-travels) that focuses on deploying a python currency exchange application to Openshift 4 using Redhat's universal base image.
 
 
 ## After following this code pattern, you will understand how to:
 
 * Design and create a Python microservice with a REST interface that has a swagger test harness where you can manually inspect, discover, and run the various API endpoints.
-* Use and run this simple microservice.
+
 * Build a docker image of this microservice using the RedHat Universal Base Image(UBI)
 * Deploy and run this microservice on OpenShift version 4
 
 ## Architecture
 
-This flow is for the runtime of the currency conversion microservice.
+This is the flow of the currency conversion microservice.
 
-![run time flow](doc/images/architecture.jpg)
+![architecture flow diagram](./doc/images/architecture.jpg)
 
-
-***Figure 1. Production flow***
+***Figure 1: Architecture flow***
 
 1. Client API Consumer calls the microservice over the internet (http/s request).
 1. Flask process acts as a `web server` and accepts the REST request (e.g. GET /convertCurrency/ZAR/USD/600.66).
@@ -25,9 +24,10 @@ This flow is for the runtime of the currency conversion microservice.
 1. An exchange rate for ZAR is retrieved and stored. The value of 600.66 South African Rands (ZAR) is converted to US Dollars(USD).
 1. Flask then sends a response to the calling consumer with the dollar amount (in this case, $40.59 ).
 
+
 ## Included components
 
-* [IBM Cloud RedHat Openshift version 4](https://www.ibm.com/cloud/openshift): Red Hat® OpenShift® on IBM Cloud™ is a fully managed OpenShift service that leverages the enterprise scale and security of IBM Cloud.
+* [IBM Cloud RedHat Openshift version 4](https://www.ibm.com/cloud/openshift): Red Hat® OpenShift® on IBM Cloud™ is a fully managed OpenShift service that leverages the enterprise scale and security of the IBM Cloud.
 * [Swagger](https://swagger.io/): A framework of API developer tools for the OpenAPI Specification that enables development across the entire API lifecycle.
 
 
@@ -36,49 +36,24 @@ This flow is for the runtime of the currency conversion microservice.
 
 * [Container Orchestration](https://www.ibm.com/cloud-computing/bluemix/containers): Automating the deployment, scaling and management of containerized applications.
 * [Microservices](https://www.ibm.com/developerworks/community/blogs/5things/entry/5_things_to_know_about_microservices?lang=en): Collections of fine-grained, loosely coupled services using a lightweight protocol to provide building blocks in modern application composition in the cloud.
-* [Python](https://www.python.org/) Python is a programming language that lets you work quickly and integrate systems more effectively.
-* [Flask](https://flask.palletsprojects.com/en/1.1.x/) Flask is a micro [web framework](https://en.wikipedia.org/wiki/Flask_(web_framework)) written in Python. It is classified as a microframework because it does not require particular tools or libraries. ... However, Flask supports extensions that can add application features as if they were implemented in Flask itself.
+* [Python](https://www.python.org/) is a programming language that lets you work quickly and integrate systems more effectively.
+* [Flask](https://flask.palletsprojects.com/en/1.1.x/) is a micro [web framework](https://en.wikipedia.org/wiki/Flask_(web_framework)) written in Python. It is classified as a microframework because it does not require particular tools or libraries.
 
 # Prerequisites
 You need to have the following installed to complete the steps in this code pattern:
 
 * [Docker](https://www.docker.com/products/docker-desktop)
-* [IBM RedHat OpenShift 4 Service](https://cloud.ibm.com/kubernetes/catalog/openshiftcluster
-
-For running these services locally without Docker containers, you need:
-
-[Python 3.6 or later](https://www.python.org/downloads/)
-[Pipenv](https://pipenv-fork.readthedocs.io/en/latest/)
-
-### This code pattern was built 100% TDD and has 100% test coverage.
-
-`Pipenv` is used as the python virtual environment. With pipenv you no longer need to use `pip` and `venv` separately.
-
-We use `Pytest` as our unit test framework. 
-
-The unit tests we run in this pattern are run in the deployment pipeline as you can see [here](https://github.com/IBM/python-ubi-openshift/tree/master/.travis.yml).
-
-
-This pattern also includes neat developer productivity tools:
-
-### Code stylers and formatters
-
-`Flake8` is a command-line utility for enforcing style consistency across Python projects.
-
-`Black` is a Python formatting tool.
-
-### Version Control Integration - black + flake8 with git pre-commit hooks
-
-Git hook scripts are useful for identifying simple issues before submission to code review.
+* [IBM Cloud Account](https://cloud.ibm.com/registration)
+* [IBM RedHat OpenShift 4 Cluster](https://cloud.ibm.com/kubernetes/catalog/openshiftcluster)
+* OpenShift CLI tool [oc](https://cloud.ibm.com/docs/openshift?topic=openshift-openshift-cli#cli_oc)
 
 # Steps 
 
 Follow these steps to set up and run this code pattern locally and on the cloud. The steps are described in detail below.
 
 1. [Clone the repo](#1-clone-the-repo)
-2. [Run the application locally](#2-run-the-application-locally)
-3. [Build a docker image, then run it locally](#3-Build-a-docker-image-then-run-it-locally)
-4. [Deploy to IBM Cloud](#4-deploy-to-ibm-cloud)
+2. [Build a docker image, then run it locally](#3-Build-a-docker-image-then-run-it-locally)
+3. [Deploy to IBM RedHat OpenShift 4 Cluster](#4-deploy-to-ibm-cloud)
 
 ### 1. Clone the repo
 
@@ -90,42 +65,31 @@ git clone https://github.com/IBM/python-ubi-openshift.git
 cd python-ubi-openshift
 ```
 
-### 2. Run the application locally
 
-1. ensure `pipenv` will be local to your dir structure `export PIPENV_VENV_IN_PROJECT=1`
-1. setup `pipenv` run: `pipenv install --three`
-1. check `pipenv` run: `pipenv check`
-1. activate `pipenv` run: `pipenv shell`
-1. install runtime python packages with `pipenv` run: `pipenv install`
-1. install dev python packages with `pipenv` run: `pipenv install --dev`
-1. install `pre-commit` git hook run: `pipenv run setup_dev`
-1. run the unit-tests run: `pytest`
-1. start the flask microservice run: `python src/main.py`
-1. browse to the swagger test harness by navigating to [http://127.0.0.1:7878](http://127.0.0.1:7878)
-
-> Note: The server `host`  and `port` can be changed as required in the `src/main.py` Flask server file.
-
-### 3. Build a docker image, then run it locally
+### 2. Build a docker image, then run it locally
 
 We showcase using the RedHat Universal Base Image (UBI)
 
-<details><summary><strong>Learn more about UBI</strong></summary>
 
 ## Introducing the RedHat Universal Base Image (UBI)
 
-> At the core of containers there is a lighter weight Linux operating system. Most of us have used Ubuntu or Alpine as the base Operating system.
+At the core of containers there is a lighter weight Linux operating system. Most of us may have used Ubuntu or Alpine as the base Operating system.
 
-> Now there is a Enterprise Linux alternative from RedHat called the Universal Base Image (UBI).
+RedHat now offers us a good alternative base image, that is essentially the core
+of RedHat Enterprise Linux.  Much like CentOS and RedHat Enteprise linux derive it's core elements from the OpenSource Fedora project.
 
-> UBI is three things:
+This ***Linux alternative from RedHat*** is called the Universal Base Image (UBI)`.
 
-1. A set of three base images (`ubi`, `ubi-minimal`, `ubi-init`)
-1. A set of language runtime images (`node.js`, `python`, etc.)
-1. A set of associated packages in a `YUM repository` which satisfy common application dependencies
+The UBI comes in a few flavors:
 
-</details>
+1.  You can choose one of  three base images (`ubi`, `ubi-minimal` and `ubi-init`)
+1.  Or Language specific runtime images (e.g. `node.js`, `python`, etc.)
 
-Regard our [Dockerfile](./Dockerfile) and notice the new `FROM` directive is for the UBI version 8 ( core of RedHat 8)
+UBI allows one to use associated packages via `YUM repositories` which satisfy common application dependencies, like `httpd` (apache web server) etc.
+
+
+
+### Take a look at our [Dockerfile](./Dockerfile) and notice the `FROM` directive is using the UBI version 8 ( core of RedHat 8) base image.
 
 ```yaml
 FROM registry.access.redhat.com/ubi8/ubi
@@ -142,7 +106,7 @@ Now let's build this docker image with the `RedHat UBI`.
 
 > To find the username, you can click on at your Docker desktop icon (mac) toolbar 
 
-![Docker Desktop Find your logged-in username](./doc/source/images/docker-desktop-get-username.png)
+![Docker Desktop Find your logged-in username](./doc/images/docker-desktop-get-username.png)
 </details>
 
 1. Build the docker image by running:
@@ -205,7 +169,6 @@ At your command line run: `docker ps` and you should now confirm that the docker
 
 1. To allow changes to the this microservice, create a repo on [Docker Cloud](https://cloud.docker.com/) where you can push the newly modified container. 
 
-> NOTE: If a new repo is used for the Docker containers, the container `image` will need to be modified to the name of the new repo used in [./deploy/currencyexchange-deploy.yaml](./deploy/currencyexchange-py-deploy.yaml).
 
 ```bash
 # build docker image
@@ -222,14 +185,14 @@ docker push $DOCKERHUB_USERNAME/currencyexchange-py:v0.0.1
 <details><summary><strong>What a successful push to docker hub should look like</strong></summary>
 
 ```bash
-The push refers to repository [docker.io/grantsteinfeldibm/currencyexchange-py]
+The push refers to repository [docker.io/claraxxxxxx/currencyexchange-py]
 693f7ba0eeed: Pushed 
 225cfc6f0260: Pushed 
 2ddc888e45c8: Pushed 
 1aac3cbf59e3: Pushed 
 85f69e555a1b: Pushed 
 1295eae54c9d: Pushed 
-v0.0.1: digest: sha256:2aa41155a8bd44bb2558cb990ed4d5f455968ef88697463456f249a35654841d size: 1574
+v0.0.1: digest: sha256:2aa41155a8bd44bb25tytytyt990ed4d5f455968ef88697463456f249a35654841d size: 1574
 ```
 </details>
 
@@ -243,16 +206,10 @@ and follow the set of instructions for creating a Container and Cluster.
 2. OpenShift web console
 
 
-
 #### Step 1) Using the [Developer Tools CLI](https://www.ibm.com/cloud/cli):
 
-Login to the IBM Cloud 
-> NOTE use `--sso` if you have a single sign on account, or delete for username/password login
 
-```bash
-ibmcloud login --sso
-```
-Login to your cluster
+Login to your OpenShift 4 cluster
 
 ![2 ways to connect to OpenShift cluster](doc/images/OpenShift-connection-to-cluster-2-ways.png)
 
@@ -260,7 +217,7 @@ click the Actions/Connect via CLI ( annotated with a number(1) above ) and follo
 
 use `oc login ... ` to login to your cluster, for example 
 ```sh
-oc login --token=X8bjO-ROAhGUx8S9pvge6pMdLQzrFysuG9SSgSI6hyg --server=https://c100-e.us-east.containers.cloud.ibm.com:31102
+oc login --token=X8bjO-ROAhGUx8S9pvg6767574ysuG9SSgSI6hyg --server=https://c108-e.us-northwest.containers.cloud.ibm.com:31007
 ```
 
 create a new project
@@ -323,7 +280,71 @@ After provisioning your OpenShift cluster, click on the blue `OpenShift web cons
 
 ![2 ways to connect to OpenShift cluster](doc/images/OpenShift-connection-to-cluster-2-ways.png)
 
-***instructions to be put here, pending OpenShift 4 (beta) invalid name issue(s) resolution on bee-travels-python site first***
+
+You should now see the web console.
+
+Note that there are 2 ***perspectives*** of the web console, the `administrator` and the `developer`.  Switch to the developer view by clicking on the Administrator (default) option and selecting the Developer option indicate by the number two (2) in the image below 
+
+![OpenShift web console switch to the developer perspective](doc/images/OpenShift-GUI-change-to-developer-perspective.png)
+
+The ***Developer*** perspective in the web console provides you the following options from the Add view to create applications and associated services and deploy them on OpenShift Container Platform:
+
+There are various options to choose from here, we will choose the `Container Image` where you will use the existing image you previously built and pushed to DockerHub and deploy it on your OpenShift Container Platform.
+
+![OpenShift web console create app with container image](doc/images/OpenShift-GUI-dev-perspective-app-creation-choices-tile-highlighted-container-image.png)
+
+<details><summary><strong>Learn more about application creation options as an OpenShift Developer</strong></summary>
+
+
+1. From Git: Use this option to import an existing codebase in a Git repository to create, build, and deploy an application on OpenShift Container Platform.
+
+1. Container Image: Use existing images from an image stream or registry to deploy it on to OpenShift Container Platform.
+
+1. From Catalog: Explore the Developer Catalog to select the required applications, services, or source to image builders and add it to your project.
+
+1. From Dockerfile: Import a dockerfile from your Git repository to build and deploy an application.
+
+1. YAML: Use the editor to add YAML or JSON definitions to create and modify resources.
+
+To learn more check out the [OpenShift developer documentation](https://docs.openshift.com/container-platform/4.3/applications/application_life_cycle_management/odc-creating-applications-using-developer-perspective.html#odc-creating-applications-using-developer-perspective)
+</details>
+
+Fill out the image name text box on your DockerHub repository.  It should be:
+
+`$DOCKERHUB_USERNAME/currencyexchange-py:v0.0.1`
+
+where `$DOCKERHUB_USERNAME` is you Docker hub username.
+
+Click on the `search icon`  (magnifying glass) to the left of the text box.
+
+It should fetch the image metadata from DockerHub and create a nice form.
+
+![OpenShift Container image form](doc/images/OpenShift-container-image-after-search-details-of-image.png)
+
+Click on the blue create button indicated with the number one(1) above.
+
+Great!  You should now see a nice topology and summary of the application you just created:
+
+![OpenShift](doc/images/OpenShift-GUI-container-image-created-successfully-maybe.png)
+
+You should now be able to click on the public IP that was by default created for you. See and click on the route, e.g.
+
+`http://currencyexchange-py-currencyexchange-py.gsteinfeld-ubi-webconso-f2c6cdc6801be85fd188b09d006f13e3-0000.us-east.containers.appdomain.cloud/`
+
+You should now see Python flask swagger input screen:
+
+
+### Congratulations!  You have now successfully created an microservice using the RedHat Universal Base Image (UBI) on OpenShift 4 on the IBM Cloud.
+
+
+
+
+
+
+
+
+
+
 
 
 # Resources

@@ -1,3 +1,5 @@
-README.template.md
 *.pyc
-
+.DS_Store
+build/
+dist/
+__pycache__
