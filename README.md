@@ -102,7 +102,8 @@ FROM registry.access.redhat.com/ubi8/ubi
 Now let's build this docker image with the `RedHat UBI`.
 
 
-1. Make sure you are at the root of this application.
+1. Make sure you are at the Root directory of this application.
+
 1. Note your docker-hub username
 <details><summary><strong>How to find your docker hub credentials</strong></summary>
 
