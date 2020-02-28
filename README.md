@@ -57,7 +57,9 @@ You need to have the following installed to complete the steps in this code patt
 Follow these steps to set up and run this code pattern locally and on the cloud. The steps are described in detail below.
 
 1. [Clone the GitHub repository locally](#1-clone-the-GitHub repository-locally)
-2. [Build a docker image, then run it locally](#2-build-and-run-a-docker-image-locally)
+
+2. [Build a docker image and run it locally](#2-build-and-run-a-docker-image-locally)
+
 3. [Deploy to IBM RedHat OpenShift 4 Cluster](#3-deploy-to-openshift-4-cluster)
 
 ### 1. Clone the GitHub repository locally
