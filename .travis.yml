@@ -1,7 +1,7 @@
 language: python
 install: "make"
 script:
-  - make test
+  - make ci
 cache: pip
 jobs:
   include:
