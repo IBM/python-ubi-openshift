@@ -212,11 +212,11 @@ and follow the set of instructions for creating a Container and Cluster.
 
 ### There are 2 ways to deploy the image to OpenShift.
 
-1. [Using the OC CLI](#1-using-the-oc-cli)
-2. [OpenShift web console](#2-OpenShift-web-console)
+1. [Using the OC CLI](#Option-1-using-the-oc-cli)
+2. [OpenShift web console](#Option-2-OpenShift-web-console)
 
 
-#### Step 1. Using the OC CLI 
+#### Option 1. Using the OC CLI 
 read more about the [OC CLI](https://cloud.ibm.com/docs/openshift?topic=openshift-openshift-cli#cli_oc)
 
 
@@ -284,8 +284,7 @@ Looking at the OpenShift Web console we can now see our microservice all setup a
 
 ![OpenShift Web console up and running](doc/images/OpenShift-webconsole-after-CLI-image-deploy.png)
 
-
-#### Step 2. OpenShift web console
+#### Option 2. OpenShift web console
 
 After provisioning your OpenShift cluster, click on the blue `OpenShift web console` button indicated by the number two(2) in the image below.
 
