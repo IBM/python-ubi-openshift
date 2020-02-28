@@ -56,7 +56,7 @@ You need to have the following installed to complete the steps in this code patt
 
 Follow these steps to set up and run this code pattern locally and on the cloud. The steps are described in detail below.
 
-1. [Clone the GitHub repository locally](#1-clone-the-GitHub repository-locally)
+1. [Clone the GitHub repository locally](#1-clone-the-GitHub-repository-locally)
 
 2. [Build a docker image and run it locally](#2-build-and-run-a-docker-image-locally)
 
