@@ -175,13 +175,13 @@ At your command line run: `docker ps` and you should now confirm that the docker
 ![expected browser swagger](./doc/images/expected-browser-swagger.png)
 
 
-### 3. Deploy to openshift 4 cluster
+### 3. Deploy to OpenShift 4 cluster
 
 1. To allow changes to the this microservice, create a repo on [Docker Cloud](https://cloud.docker.com/) where you can push the newly modified container. 
 
 
 ```bash
-# build docker image
+# build your docker image
 export DOCKERHUB_USERNAME=<your-dockerhub-username>
 
 docker build -t $DOCKERHUB_USERNAME/currencyexchange-py:v0.0.1 .
