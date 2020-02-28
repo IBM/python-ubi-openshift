@@ -1,11 +1,9 @@
 language: python
 install: "make"
 script:
-  - make ci
+  - make test
 cache: pip
 jobs:
   include:
     - stage: test
       python: '3.6'
-      script:
-        - python3 -m pip install pipenv && pipenv install && pipenv install --dev && pipenv shell && pytest
