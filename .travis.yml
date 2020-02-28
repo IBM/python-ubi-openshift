@@ -1,9 +1,11 @@
 language: python
-sudo: false
-python:
-  - 36
+install: "make"
+script:
+  - make ci
+cache: pip
 jobs:
   include:
-    - stage: "testing"
-      name: "Pytest testing"
-      script: python3 -m pip install pipenv && pipenv install && pipenv install --dev && pipenv shell && pytest
+    - stage: test
+      python: '3.6'
+      script:
+        - python3 -m pip install pipenv && pipenv install && pipenv install --dev && pipenv shell && pytest
