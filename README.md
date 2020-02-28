@@ -93,7 +93,7 @@ UBI allows one to use associated packages via `YUM repositories` which satisfy c
 
 
 
-### Take a look at our [Dockerfile](./Dockerfile) and notice the `FROM` directive is using the UBI version 8 ( core of RedHat 8) base image.
+### Take a look at our [Dockerfile](./Dockerfile) and notice the `FROM` directive is using the UBI version 8 (core of RedHat 8) base image.
 
 ```yaml
 FROM registry.access.redhat.com/ubi8/ubi
