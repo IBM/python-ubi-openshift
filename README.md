@@ -212,8 +212,8 @@ and follow the set of instructions for creating a Container and Cluster.
 
 ### There are 2 ways to deploy the image to OpenShift.
 
-1. Using the OC CLI (#1-using-the-oc-cli)
-2. OpenShift web console (#2-OpenShift-web-console)
+1. [Using the OC CLI](#1-using-the-oc-cli)
+2. [OpenShift web console](#2-OpenShift-web-console)
 
 
 #### Step 1. Using the OC CLI 
