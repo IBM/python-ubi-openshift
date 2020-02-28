@@ -207,11 +207,11 @@ and follow the set of instructions for creating a Container and Cluster.
 
 ### There are 2 ways to deploy the image to OpenShift.
 
-1. Using the Developer Tools CLI
+1. Using the OC CLI
 2. OpenShift web console
 
 
-#### Step 1) Using the [Developer Tools CLI](https://www.ibm.com/cloud/cli):
+#### Step 1) Using the [OC CLI](https://www.ibm.com/cloud/cli):
 
 
 Login to your OpenShift 4 cluster
