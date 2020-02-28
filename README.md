@@ -327,17 +327,23 @@ Great!  You should now see a nice topology and summary of the application you ju
 
 ![OpenShift](doc/images/OpenShift-GUI-container-image-created-successfully-maybe.png)
 
-You should now be able to click on the public IP that was by default created for you. See and click on the route, e.g.
+Click on the `currencyexchang...` button in the above screenshot, indicated by the number one(1) in the orange triangle.
 
-`http://currencyexchange-py-currencyexchange-py.gsteinfeld-ubi-webconso-f2c6cdc6801be85fd188b09d006f13e3-0000.us-east.containers.appdomain.cloud/`
+You should now be able to click on the public URL  under the `Routes` section in the right hand panel. 
 
-You should now see Python Flask swagger API interactive web page. 
+For example:
+
+`http://currencyexchange-py-currencyexchange-py.username-ubi-webconso-f2c6cdc6801be85b09d0xxxxx06f13e3-0000.us-northeast.containers.appdomain.cloud/`
+
+You should now see Python Flask swagger API interactive web page, where you can manually test the Currency Conversion as seen below. 
 
 ![OpenShift url shows swagger and exchange rate conversion executes as expected](doc/images/OpenShift-url-navigate-to-shows-swagger-success.png)
 
 
 
-### Congratulations!  You have now successfully created an microservice using the RedHat Universal Base Image (UBI) on OpenShift 4 on the IBM Cloud.
+### Congratulations!  
+
+You have now successfully created an microservice using the `RedHat Universal Base Image (UBI)` on `OpenShift 4`
 
 
 
@@ -351,11 +357,11 @@ You should now see Python Flask swagger API interactive web page.
 
 
 # Resources
-[Introducing the Red Hat Universal Base Image ](https://www.redhat.com/en/blog/introducing-red-hat-universal-base-image) - blog by Scott McCarty
+[Introducing the Red Hat Universal Base Image ](https://www.redhat.com/en/blog/introducing-red-hat-universal-base-image) - RedHat blog by Scott McCarty
 
-[Python Testing with pytest: Simple, Rapid, Effective, and Scalable.](https://pragprog.com/book/bopytest/python-testing-with-pytest) Okken, Brian. Pragmatic Bookshelf.
 
-[docs on flask-restplus](https://pypi.org/project/flask-restplus/)
+
+[Python RESTful APIs using flask-restplus](https://pypi.org/project/flask-restplus/)
 
 
 ## License
