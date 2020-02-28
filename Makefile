@@ -7,4 +7,3 @@ test:
 	detox
 ci:
 	pipenv run pytest -v
-
