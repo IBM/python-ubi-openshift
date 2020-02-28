@@ -1,8 +1,8 @@
 [![Build Status](https://travis-ci.com/IBM/python-ubi-openshift.svg?branch=development)](https://travis-ci.com/IBM/python-ubi-openshift)
 
-#  Deploy an application to Openshift 4 using Redhat's universal base image
+#  Deploy an application to OpenShift 4 using Redhat's universal base image
 
-This code pattern is part of the [Bee Travels project](https://github.com/bee-travels) that focuses on deploying a python currency exchange application to Openshift 4 using Redhat's universal base image.
+This code pattern is part of the [Bee Travels project](https://github.com/bee-travels) that focuses on deploying a python currency exchange application to OpenShift 4 using Redhat's universal base image.
 
 
 ## After following this code pattern, you will understand how to:
@@ -29,7 +29,7 @@ This is the flow of the currency conversion microservice.
 
 ## Included components
 
-* [IBM Cloud RedHat Openshift version 4](https://www.ibm.com/cloud/openshift): Red Hat® OpenShift® on IBM Cloud™ is a fully managed OpenShift service that leverages the enterprise scale and security of the IBM Cloud.
+* [IBM Cloud RedHat OpenShift version 4](https://www.ibm.com/cloud/openshift): Red Hat® OpenShift® on IBM Cloud™ is a fully managed OpenShift service that leverages the enterprise scale and security of the IBM Cloud.
 * [Swagger](https://swagger.io/): A framework of API developer tools for the OpenAPI Specification that enables development across the entire API lifecycle.
 
 
