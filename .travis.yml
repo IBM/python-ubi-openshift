@@ -6,4 +6,4 @@ jobs:
   include:
     - stage: "testing"
       name: "Pytest testing"
-      script: pipenv install && pipenv install --dev && pipenv shell && pytest -v
+      script: python3 -m pip install pipenv && pipenv install && pipenv install --dev && pipenv shell && pytest -v
