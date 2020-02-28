@@ -3,7 +3,8 @@ init:
 	pipenv install
 	pipenv install --dev
 test:
-	# This runs all of the tests, on both Python 2 and Python 3.
+	# tox runs all of the tests in parallel
+	# see https://tox.readthedocs.io/en/latest/ 
 	tox -p
 ci:
 	pipenv run pytest -v
