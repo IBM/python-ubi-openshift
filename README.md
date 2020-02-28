@@ -60,7 +60,7 @@ Follow these steps to set up and run this code pattern locally and on the cloud.
 2. [Build a docker image, then run it locally](#2-build-and-run-a-docker-image-locally)
 3. [Deploy to IBM RedHat OpenShift 4 Cluster](#3-deploy-to-openshift-4-cluster)
 
-### 1. clone the GitHub repository locally
+### 1. Clone the GitHub repository locally
 
 Clone the `currencyexchange` GitHub repository locally.
 
@@ -73,7 +73,7 @@ cd python-ubi-openshift
 ```
 
 
-### 2. build and run a docker image locally
+### 2. Build and run a docker image locally
 
 We showcase this method, by using the RedHat `Universal Base Image` (UBI)
 
