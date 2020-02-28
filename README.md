@@ -348,7 +348,7 @@ You should now see Python Flask swagger API interactive web page, where you can 
 
 ### Congratulations!  
 
-You have now successfully created an microservice using the `RedHat Universal Base Image (UBI)` on `OpenShift 4`
+You have now successfully created and deployed a microservice using the RedHat Universal Base Image (UBI) in an OpenShift 4 cluster on IBM Cloud
 
 
 
