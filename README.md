@@ -52,10 +52,10 @@ You need to have the following installed to complete the steps in this code patt
 Follow these steps to set up and run this code pattern locally and on the cloud. The steps are described in detail below.
 
 1. [Clone the repo](#1-clone-the-repo)
-2. [Build a docker image, then run it locally](#3-Build-a-docker-image-then-run-it-locally)
-3. [Deploy to IBM RedHat OpenShift 4 Cluster](#4-deploy-to-ibm-cloud)
+2. [Build a docker image, then run it locally](#2-build-and-run-a-docker-image-locally)
+3. [Deploy to IBM RedHat OpenShift 4 Cluster](#3-deploy-to-openshift-4-cluster)
 
-### 1. Clone the repo
+### 1. clone the repo
 
 Clone the `currencyexchange` repo locally. In a terminal, run:
 
@@ -66,12 +66,14 @@ cd python-ubi-openshift
 ```
 
 
-### 2. Build a docker image, then run it locally
+### 2. build and run a docker image locally
 
-We showcase using the RedHat Universal Base Image (UBI)
+We showcase this method, by using the RedHat `Universal Base Image` (UBI)
 
 
-## Introducing the RedHat Universal Base Image (UBI)
+## What is UBI?
+
+### Introducing the RedHat Universal Base Image (UBI)
 
 At the core of containers there is a lighter weight Linux operating system. Most of us may have used Ubuntu or Alpine as the base Operating system.
 
@@ -165,7 +167,7 @@ At your command line run: `docker ps` and you should now confirm that the docker
 ![expected browser swagger](./doc/images/expected-browser-swagger.png)
 
 
-### Deploy to IBM Cloud
+### 3. deploy to openshift 4 cluster
 
 1. To allow changes to the this microservice, create a repo on [Docker Cloud](https://cloud.docker.com/) where you can push the newly modified container. 
 
