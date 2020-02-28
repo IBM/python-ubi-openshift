@@ -175,7 +175,7 @@ At your command line run: `docker ps` and you should now confirm that the docker
 ![expected browser swagger](./doc/images/expected-browser-swagger.png)
 
 
-### 3. deploy to openshift 4 cluster
+### 3. Deploy to openshift 4 cluster
 
 1. To allow changes to the this microservice, create a repo on [Docker Cloud](https://cloud.docker.com/) where you can push the newly modified container. 
 
