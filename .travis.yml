@@ -1,7 +1,7 @@
 language: python
 sudo: false
 python:
-  - 37
+  - 36
 jobs:
   include:
     - stage: "testing"
