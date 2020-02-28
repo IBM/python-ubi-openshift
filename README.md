@@ -331,7 +331,10 @@ You should now be able to click on the public IP that was by default created for
 
 `http://currencyexchange-py-currencyexchange-py.gsteinfeld-ubi-webconso-f2c6cdc6801be85fd188b09d006f13e3-0000.us-east.containers.appdomain.cloud/`
 
-You should now see Python flask swagger input screen:
+You should now see Python Flask swagger API interactive web page. 
+
+![OpenShift url shows swagger and exchange rate conversion executes as expected](doc/images/OpenShift-url-navigate-to-shows-swagger-success.png)
+
 
 
 ### Congratulations!  You have now successfully created an microservice using the RedHat Universal Base Image (UBI) on OpenShift 4 on the IBM Cloud.

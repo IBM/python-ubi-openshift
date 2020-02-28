@@ -10,7 +10,7 @@ app = Flask(__name__)
 api = Api(
     app,
     version="1.0.0",
-    title="Bee Travel Currency Data Service",
+    title="Bee Travels Currency Data Service",
     description="This is a microservice that handles currency exchange rate data for Bee Travels",
 )
 
