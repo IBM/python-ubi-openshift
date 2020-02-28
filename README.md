@@ -36,9 +36,12 @@ This is the flow of the currency conversion microservice.
 
 ## Featured technologies
 
-* [Container Orchestration](https://www.ibm.com/cloud-computing/bluemix/containers): Automating the deployment, scaling and management of containerized applications.
-* [Microservices](https://www.ibm.com/developerworks/community/blogs/5things/entry/5_things_to_know_about_microservices?lang=en): Collections of fine-grained, loosely coupled services using a lightweight protocol to provide building blocks in modern application composition in the cloud.
+* [Container Orchestration](https://www.ibm.com/cloud/container-service/): is the process of automating the deployment, scaling and management of containerized applications.
+
+* [Microservices](https://www.ibm.com/cloud/architecture/architectures/microservices/): are an application architectural style in which an application is composed of many discrete, network-connected components called microservices.  They are collections of fine-grained, loosely coupled services intercommunicating via a lightweight protocol to provide building blocks in modern application composition in the cloud.
+
 * [Python](https://www.python.org/) is a programming language that lets you work quickly and integrate systems more effectively.
+
 * [Flask](https://flask.palletsprojects.com/en/1.1.x/) is a micro [web framework](https://en.wikipedia.org/wiki/Flask_(web_framework)) written in Python. It is classified as a microframework because it does not require particular tools or libraries.
 
 # Prerequisites
