@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/IBM/python-ubi-openshift.svg?branch=development)](https://travis-ci.com/IBM/python-ubi-openshift)
+
 #  Deploy an application to Openshift 4 using Redhat's universal base image
 
 This code pattern is part of the [Bee Travels project](https://github.com/bee-travels) that focuses on deploying a python currency exchange application to Openshift 4 using Redhat's universal base image.
