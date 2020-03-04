@@ -16,7 +16,7 @@ This code pattern is part of the [Bee Travels project](https://github.com/bee-tr
 
 This is the flow of the currency conversion microservice.
 
-![architecture flow diagram](./doc/images/architecture.jpg)
+![architecture flow diagram](./doc/images/architecture.png)
 
 ***Figure 1: Architecture flow***
 
