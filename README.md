@@ -49,7 +49,7 @@ You need to have the following installed to complete the steps in this code patt
 
 * [Docker](https://www.docker.com/products/docker-desktop)
 * [IBM Cloud Account](https://cloud.ibm.com/registration)
-* [IBM RedHat OpenShift 4 Cluster](https://cloud.ibm.com/kubernetes/catalog/openshiftcluster)
+* [IBM RedHat OpenShift 4.3 Cluster](https://cloud.ibm.com/kubernetes/catalog/openshiftcluster)
 * OpenShift CLI tool [oc](https://cloud.ibm.com/docs/openshift?topic=openshift-openshift-cli#cli_oc)
 
 # Steps 
