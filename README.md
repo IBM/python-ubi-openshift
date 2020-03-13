@@ -1,15 +1,15 @@
 [![Build Status](https://travis-ci.com/IBM/python-ubi-openshift.svg?branch=development)](https://travis-ci.com/IBM/python-ubi-openshift)
 
-#  Deploy an application to OpenShift 4 using Redhat's universal base image
+#  Deploy an application to OpenShift 4 using Redhat's Universal Base Image(UBI)
 
-This code pattern is part of the [Bee Travels project](https://github.com/bee-travels) that focuses on deploying a python currency exchange application to OpenShift 4 using Redhat's universal base image.
+This code pattern is part of the [Bee Travels project](https://github.com/bee-travels) that focuses on deploying a python currency exchange application to OpenShift 4 using UBI
 
 
 ## After following this code pattern, you will understand how to:
 
 * Design and create a Python microservice with a REST interface that has a swagger test harness where you can manually inspect, discover, and run the various API endpoints.
 
-* Build a docker image of this microservice using the RedHat Universal Base Image(UBI)
+* Build a docker image of this microservice using the UBI
 * Deploy and run this microservice on OpenShift version 4
 
 ## Architecture
