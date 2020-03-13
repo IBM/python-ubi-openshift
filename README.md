@@ -1,8 +1,8 @@
 [![Build Status](https://travis-ci.com/IBM/python-ubi-openshift.svg?branch=development)](https://travis-ci.com/IBM/python-ubi-openshift)
 
-#  Deploy an application to OpenShift 4 using Redhat's Universal Base Image(UBI)
+#  Deploy an application to OpenShift 4 using Red Hat Universal Base Image (UBI)
 
-This code pattern is part of the [Bee Travels project](https://github.com/bee-travels) that focuses on deploying a python currency exchange application to OpenShift 4 using UBI
+This code pattern is part of the [Bee Travels project](https://github.com/bee-travels) that focuses on deploying a Python currency exchange application to OpenShift 4 using UBI
 
 
 ## After following this code pattern, you will understand how to:
