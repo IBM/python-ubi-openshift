@@ -20,7 +20,7 @@ This is the flow of the currency conversion microservice.
 
 ***Figure 1: Architecture flow***
 
-1. Client API Consumer calls the microservice over the internet (http/s request).
+1. Client API Consumer calls the microservice over the internet (http(s) request).
 1. Flask process acts as a `web server` and accepts the REST request (e.g. GET /convertCurrency/ZAR/USD/600.66).
 1. Code routing in Flask passes the request to a service module which in turn calls the External European Currency Exchange API (http://api.exchangeratesapi.io).
 1. An exchange rate for ZAR is retrieved and stored. The value of 600.66 South African Rands (ZAR) is converted to US Dollars(USD).
