@@ -108,14 +108,14 @@ FROM registry.access.redhat.com/ubi8/ubi
 Now let's build this docker image with the `UBI`.
 
 
-1. Make sure you are at the Root directory of this application.
+1. Make sure you are at the root directory of this application.
 
 1. Note your docker-hub username
 <details><summary><strong>How to find your docker hub credentials</strong></summary>
 
-> To download Docker desktop you must create a Docker hub account.
+> To download Docker Desktop you must create a Docker Hub account.
 
-> To find the username, you can click on at your Docker desktop icon (mac) toolbar 
+> To find the username, you can click on at your Docker Desktop icon (Mac) toolbar 
 
 ![Docker Desktop Find your logged-in username](./doc/images/docker-desktop-get-username.png)
 </details>
