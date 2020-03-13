@@ -82,21 +82,21 @@ We showcase this method, by using the RedHat `Universal Base Image` (UBI)
 
 ## What is UBI?
 
-### Introducing the RedHat Universal Base Image (UBI)
+### Introducing UBI
 
 At the core of containers there is a lighter weight Linux operating system. Most of us may have used Ubuntu or Alpine as the base Operating system.
 
-RedHat now offers us a good alternative base image, that is essentially the core
-of RedHat Enterprise Linux.  Much like CentOS and RedHat Enteprise linux derive it's core elements from the OpenSource Fedora project.
+Red Hat now offers us a good alternative base image, that is essentially the core
+of Red Hat Enterprise Linux.  Much like CentOS and Red Hat Enteprise linux derive it's core elements from the OpenSource Fedora project.
 
-This ***Linux alternative from RedHat*** is called the Universal Base Image (UBI)`.
+This ***Linux alternative from Red Hat*** is called the Red Hat Universal Base Image (UBI).
 
 The UBI comes in a few flavors:
 
-1.  You can choose one of  three base images (`ubi`, `ubi-minimal` and `ubi-init`)
-1.  Or Language specific runtime images (e.g. `node.js`, `python`, etc.)
+1.  You can choose one of the three base images (`ubi`, `ubi-minimal` and `ubi-init`)
+1.  Or language-specific runtime images (e.g. `node.js`, `python`, etc.)
 
-UBI allows one to use associated packages via `YUM repositories` which satisfy common application dependencies, like `httpd` (apache web server) etc.
+UBI allows one to use associated packages provided by `YUM repositories` which satisfy common application dependencies, like `httpd` (apache web server) etc.
 
 
 
