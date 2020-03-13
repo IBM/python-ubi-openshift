@@ -77,8 +77,7 @@ cd python-ubi-openshift
 
 ### 2. Build and run a docker image locally
 
-We showcase this method, by using the RedHat `Universal Base Image` (UBI)
-
+We showcase this method, by using the UBI.
 
 ## What is UBI?
 
@@ -100,13 +99,13 @@ UBI allows one to use associated packages provided by `YUM repositories` which s
 
 
 
-### Take a look at our [Dockerfile](./Dockerfile) and notice the `FROM` directive is using the UBI version 8 (core of RedHat 8) base image.
+### Take a look at our [Dockerfile](./Dockerfile) and notice the `FROM` directive is using the UBI version 8 (core of Red Hat 8) base image.
 
 ```yaml
 FROM registry.access.redhat.com/ubi8/ubi
 ```
 
-Now let's build this docker image with the `RedHat UBI`.
+Now let's build this docker image with the `UBI`.
 
 
 1. Make sure you are at the Root directory of this application.
