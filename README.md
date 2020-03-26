@@ -1,16 +1,17 @@
 [![Build Status](https://travis-ci.com/IBM/python-ubi-openshift.svg?branch=development)](https://travis-ci.com/IBM/python-ubi-openshift)
 
-#  Deploy an application to OpenShift 4 using RedHat Universal Base Image (UBI)
+#  Deploy an application to OpenShift 4 using Red Hat Universal Base Image (UBI)
 
-This code pattern is part of the [Bee Travels project](https://github.com/bee-travels) that focuses on deploying a Python currency exchange application to OpenShift 4 using UBI
+This code pattern is part of the [Bee Travels project](https://github.com/bee-travels) that focuses on deploying a Python currency conversion application to OpenShift 4 using UBI.
 
 
 ## After following this code pattern, you will understand how to:
 
 * Design and create a Python microservice with a REST interface that has a swagger test harness where you can manually inspect, discover, and run the various API endpoints.
 
-* Build a docker image of this microservice using the UBI
-* Deploy and run this microservice on OpenShift version 4
+* Build a docker image of this microservice using the UBI.
+
+* Deploy and run this microservice on OpenShift version 4.
 
 ## Architecture
 
@@ -29,7 +30,7 @@ This is the flow of the currency conversion microservice.
 
 ## Included components
 
-* [IBM Cloud RedHat OpenShift version 4](https://www.ibm.com/cloud/openshift): RedHat® OpenShift® on IBM Cloud™ is a fully managed OpenShift service that leverages the enterprise scale and security of the IBM Cloud.
+* [IBM Cloud Red Hat OpenShift version 4](https://www.ibm.com/cloud/openshift): Red Hat® OpenShift® on IBM Cloud™ is a fully managed OpenShift service that leverages the enterprise scale and security of the IBM Cloud.
 * [Swagger](https://swagger.io/): A framework of API developer tools for the OpenAPI Specification that enables development across the entire API lifecycle.
 
 
@@ -47,9 +48,9 @@ This is the flow of the currency conversion microservice.
 # Prerequisites
 You need to have the following installed to complete the steps in this code pattern:
 
-* [Docker](https://www.docker.com/products/docker-desktop)
+* [Docker](https://www.docker.com/products/docker-desktop) 
 * [IBM Cloud Account](https://cloud.ibm.com/registration)
-* [IBM RedHat OpenShift 4.3 Cluster](https://cloud.ibm.com/kubernetes/catalog/openshiftcluster)
+* [IBM Red Hat OpenShift Cluster](https://cloud.ibm.com/kubernetes/catalog/openshiftcluster)
 * OpenShift CLI tool [oc](https://cloud.ibm.com/docs/openshift?topic=openshift-openshift-cli#cli_oc)
 
 # Steps 
@@ -60,7 +61,7 @@ Follow these steps to set up and run this code pattern locally and on the cloud.
 
 2. [Build a docker image and run it locally](#2-build-and-run-a-docker-image-locally)
 
-3. [Deploy to IBM RedHat OpenShift 4 Cluster](#3-deploy-to-openshift-4-cluster)
+3. [Deploy to IBM Red Hat OpenShift 4 Cluster](#3-deploy-to-openshift-4-cluster)
 
 ### 1. Clone the GitHub repository locally
 
@@ -69,43 +70,45 @@ Clone the `currencyexchange` GitHub repository locally.
 In a terminal, run the following:
 
 ```bash
+# clone github repository
 git clone https://github.com/IBM/python-ubi-openshift.git
 
+# change directory to root of the source code for this pattern
 cd python-ubi-openshift
+
 ```
 
 
 ### 2. Build and run a docker image locally
 
-We showcase this method, by using the UBI.
+We will build this image using the UBI as the base operating system.
 
-## What is UBI?
+## What is the UBI?
 
-### Introducing UBI
 
-At the core of containers there is a lighter weight Linux operating system. Most of us may have used Ubuntu or Alpine as the base Operating system.
+At the core of containers there is a lighter weight Linux operating system. In the past most of us may have used Ubuntu, Alpine or some alternate distribution as the base Operating system.
 
-RedHat now offers us a freely distributable base image, the core
-been RedHat Enterprise Linux(RHEL).
+Red Hat now offers us a freely distributable base image, whose foundation is built with Red Hat Enterprise Linux (RHEL).
 
-This base image from RedHat is called the RedHat Universal Base Image (UBI).
+This base image is called the Red Hat Universal Base Image (UBI).
 
-UBI comes in a few flavors:
+The UBI comes in a few flavors:
 
-1.  You can choose one of the three base images (`ubi`, `ubi-minimal` and `ubi-init`)
-1.  Or language-specific runtime images (e.g. `node.js`, `Python`, etc.)
+1.  Pure runtime, where you can choose one of the three base images (`ubi`, `ubi-minimal` and `ubi-init`)
+1.  Language-specific runtime images (e.g. `node.js`, `Python`, etc.)
 
-UBI allows one to use associated packages provided by `YUM repositories` which satisfy common application dependencies, like `httpd` (apache web server) etc.
+UBI allows one to use Red Hat verified as well as 3rd party packages provided as `rpm`, and managed by `yum`, which satisfy common application dependencies. For instance, you can easily setup `httpd` the apache web server and many other applications.
 
 
 
-### Take a look at our [Dockerfile](./Dockerfile) and notice the `FROM` directive is using the UBI version 8 (the same core RHEL 8 has ).
+### Take a look at our [Dockerfile](./Dockerfile)
+Notice the `FROM` directive references version 8 of this UBI.
 
 ```yaml
 FROM registry.access.redhat.com/ubi8/ubi
 ```
 
-Now let's build this docker image with the `UBI`.
+Now let's build this docker image by using the `UBI`.
 
 
 1. Make sure you are at the root directory of this application.
@@ -120,10 +123,13 @@ Now let's build this docker image with the `UBI`.
 ![Docker Desktop Find your logged-in username](./doc/images/docker-desktop-get-username.png)
 </details>
 
+<br/>
+
 1. Build the docker image by running:
 
 ```bash
-export DOCKERHUB_USERNAME=<your-dockerhub-username>
+export DOCKERHUB_USERNAME=<paste-your-dockerhub-username-here>
+
 docker build -t $DOCKERHUB_USERNAME/currencyexchange-py:v0.0.1 .
 ```
 
@@ -146,10 +152,11 @@ Collecting flask (from -r requirements.txt (line 13))
 Successfully built 3b5631170697
 Successfully tagged <DOCKERHUB_USERNAME>/currencyexchange-py:v0.0.1
 ```
+You can confirm that your image was built successfulluy by typing ` docker images ` and see your image in the list.
 
 Notes:
 
-* The docker build process, pulled the RedHat 8 Universal Base Image from the redhat registry.
+* The docker build process, pulled the Red Hat 8 Universal Base Image from the Red Hat registry.
 
 * The base image is the generic image, i.e. ubi8/ubi.  We could have use the Python 3 language specic flavor of the image but opted for this version for 2 reasons:
 
@@ -159,8 +166,9 @@ Notes:
 
 
 </details>
-
+<br/>
 Great! So, now lets run the image locally!
+
 
 ```bash
 docker run -p 7878:7878 $DOCKERHUB_USERNAME/currencyexchange-py:v0.0.1
@@ -207,14 +215,13 @@ v0.0.1: digest: sha256:2aa41155a8bd44bb25tytytyt990ed4d5f455968ef88697463456f249
 ```
 </details>
 
+<br/>
 
-2. Provision an [IBM RedHat OpenShift 4 Service](https://cloud.ibm.com/kubernetes/catalog/openshiftcluster)
-and follow the set of instructions for creating a Container and Cluster.
+2. Provision an [IBM Red Hat OpenShift 4 Cluster](https://cloud.ibm.com/kubernetes/catalog/openshiftcluster)
+and follow the set of instructions for creating a Cluster.
 
-### Deploy the image to OpenShift.
+### Deploy the image to OpenShift using the `oc` CLI 
 
-#### Using the OC CLI 
-read more about the [OC CLI](https://cloud.ibm.com/docs/openshift?topic=openshift-openshift-cli#cli_oc)
 
 
 Login to your OpenShift 4 cluster
@@ -256,7 +263,7 @@ Great!  Now you should see
 
 ![new application created with your image](doc/images/OpenShift-oc-new-application-created.png)
 
-Note the yellow highlight section confirms that the RedHat UBI is the base image in your docker deployment.
+Note the yellow highlight section confirms that the Red Hat UBI is the base image in your docker deployment.
 
 Almost there!  You will need to expose the microservice to the outside world by executing
 
@@ -272,38 +279,26 @@ oc status
 ```
 ![getting the external url](doc/images/OpenShift-get-external-url-cli.png)
 
-So copy and paste the url indicated in yellow highlight above into your favorite web browser and voila!  You should see:
+So copy and paste the url indicated in yellow highlight above into your favorite web browser and voila!  You should now see Python Flask swagger API interactive web page, where you can manually test the Currency Conversion as seen below. 
 
 ![OpenShift url shows swagger and exchange rate conversion executes as expected](doc/images/OpenShift-url-navigate-to-shows-swagger-success.png)
-
 
 Looking at the OpenShift Web console we can now see our microservice all setup and running nicely.
 
 ![OpenShift Web console up and running](doc/images/OpenShift-webconsole-after-CLI-image-deploy.png)
 
-You should now see Python Flask swagger API interactive web page, where you can manually test the Currency Conversion as seen below. 
-
-![OpenShift url shows swagger and exchange rate conversion executes as expected](doc/images/OpenShift-url-navigate-to-shows-swagger-success.png)
-
 
 
 ### Congratulations!  
 
-You have now successfully created and deployed a microservice using the RedHat Universal Base Image (UBI) in an OpenShift 4 cluster on IBM Cloud
-
-
-
-
-
-
-
+You have now successfully created and deployed a microservice using the Red Hat Universal Base Image (UBI) in an OpenShift 4 cluster on the IBM Cloud.
 
 
 
 
 
 # Resources
-[Introducing the RedHat Universal Base Image(UBI) ](https://www.redhat.com/en/blog/introducing-red-hat-universal-base-image) - RedHat blog by Scott McCarty
+[Introducing the Red Hat Universal Base Image(UBI) ](https://www.redhat.com/en/blog/introducing-red-hat-universal-base-image) - RedHat blog by Scott McCarty
 
 
 [Python RESTful APIs using flask-restplus](https://pypi.org/project/flask-restplus/)
