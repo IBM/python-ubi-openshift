@@ -1,5 +1,4 @@
 FROM registry.access.redhat.com/ubi8/ubi
-MAINTAINER Grant Steinfeld grant.steinfeld@ibm.com
 RUN yum install -y python3; yum clean all
 COPY ./requirements.txt /app/requirements.txt
 WORKDIR /app
