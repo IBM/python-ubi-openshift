@@ -211,21 +211,52 @@ v0.0.1: digest: sha256:2aa41155a8bd44bb25tytytyt990ed4d5f455968ef88697463456f249
 2. Provision an [IBM RedHat OpenShift 4 Service](https://cloud.ibm.com/kubernetes/catalog/openshiftcluster)
 and follow the set of instructions for creating a Container and Cluster.
 
-### There are 2 ways to deploy the image to OpenShift.
+### Deploy the Python microservice image to OpenShift.
 
-1. [Using the OC CLI](#Option-1-using-the-oc-cli)
-2. [OpenShift web console](#Option-2-OpenShift-web-console)
+You can deploy to OpenShift by either the Web Console browser applicaton, or by using the command line terminal. 
 
-
-#### Option 1. Using the OC CLI 
-read more about the [OC CLI](https://cloud.ibm.com/docs/openshift?topic=openshift-openshift-cli#cli_oc)
+We are going to use the `oc` command line tool in this code pattern. Please check that you have v4.1.0 or later installed.
 
 
-Login to your OpenShift 4 cluster
 
-![2 ways to connect to OpenShift cluster](doc/images/OpenShift-connection-to-cluster-2-ways.png)
+<details><summary><strong>
+Install or verify the oc tool
+</strong></summary>
+ Run the command below
 
-click the Actions/Connect via CLI ( annotated with a number(1) above ) and follow the instructions:
+```bash
+
+#aserctain what version of the oc cli you have installed
+oc version
+
+#You should have v4.1 or later installed.
+v4.1.0
+
+If you don't already have this installed, please follow instructions to do so here: [`oc` CLI documentation](https://cloud.ibm.com/docs/openshift?topic=openshift-openshift-cli#cli_oc) 
+
+```
+</details>
+
+<br/>
+
+
+
+### Login to your OpenShift 4 cluster
+
+![click on the Web Console blue button](doc/images/OpenShift-OpenWebConsole.png)
+
+Launch the `Web Console` by clicking on the blue and white button ( annotated with a number(1) above )
+
+Once in the OpenShift Web Console screen, click on your username and choose 
+
+![click on the CLI login dropdown option under your username](doc/images/OpenShift-OnWebconsolePage_LoginCLI.png)
+
+Click on the `Copy login command` dropdown option under your username
+
+![clicking on display token link reveals your oc login command](doc/images/OpenShift-DisplayedToken-cli-login.png)
+
+By clicking on display token hyperlink will reveal your oc login token and command.
+
 
 use `oc login ... ` to login to your cluster, for example 
 ```sh
@@ -274,9 +305,11 @@ oc expose svc/currencyexchange-py
 oc status
 
 ```
-![getting the external url](doc/images/OpenShift-get-external-url-cli.png)
+You should see output similar to this.
 
-So copy and paste the url indicated in yellow highlight above into your favorite web browser and voila!  You should see:
+![getting the external url](doc/images/OpenShift-oc-status-url-of-svc.png)
+
+So copy and paste the URL, highlighted in purple above, into your favorite web browser and voila!  You should see:
 
 ![OpenShift url shows swagger and exchange rate conversion executes as expected](doc/images/OpenShift-url-navigate-to-shows-swagger-success.png)
 
