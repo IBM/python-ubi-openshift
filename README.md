@@ -332,7 +332,7 @@ Here you can monitor your `currency exchange microservice` cluster.  See and adu
 
 ### Congratulations!  
 
-You have now successfully created and deployed a microservice using the RedHat Universal Base Image (UBI) in an OpenShift 4 cluster on IBM Cloud
+You have now successfully created a Python Flask microservice container image, using the UBI, and optionally deployed it to a Red Hat OpenShift 4 cluster on the IBM Cloud.
 
 
 
