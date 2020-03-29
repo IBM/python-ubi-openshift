@@ -1,8 +1,5 @@
-from src.services import countryCurrencyCodeHandler
-
-# from src.errors.UserDefinedErrors import NotFoundError
 import pytest
-
+from src.services import countryCurrencyCodeHandler
 
 def test_GetCurrencyNameAndCodeForRealCountry():
     expected_ = {
@@ -78,16 +75,16 @@ def test_CSV_to_Dict():
     assert actual_[-1] == expected_
     assert len(actual_) == 253
 
-
+# there are 2 ways to handle exceptions in the Pytest framework
+# 1. hanlde the exception in the test
 def test_GetCurrencyNameAndCodeForNoCountry():
     with pytest.raises(Exception):
         countryCurrencyCodeHandler.getCurrencyNameAndCode("Westeros")
 
 
-# there are 2 other ways to handle exceptions in pytest
-
-
-# can mark a test with a python decorator that it will fail but that's OK it does as it should
+# 2. mark the test with a python decorator 
+# that will fail by design 
+# this means the test should PASS ( even with Travis/CircleCI/Jenkins etc)
 @pytest.mark.xfail(raises=Exception)
 def test_GetCurrencyNameAndCodeForNoCountryWithXfailMark():
     countryCurrencyCodeHandler.getCurrencyNameAndCode("Westeros")
