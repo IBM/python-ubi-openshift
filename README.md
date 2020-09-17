@@ -122,8 +122,14 @@ Now let's build this docker image with the `UBI`.
 
 1. Build the docker image by running:
 
+### MacOS
 ```bash
 export DOCKERHUB_USERNAME=<your-dockerhub-username>
+docker build -t $DOCKERHUB_USERNAME/currencyexchange-py:v0.0.1 .
+```
+### Windows
+```bash
+SETX DOCKERHUB_USERNAME "your-dockerhub-username"
 docker build -t $DOCKERHUB_USERNAME/currencyexchange-py:v0.0.1 .
 ```
 
