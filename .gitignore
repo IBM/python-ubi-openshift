@@ -1,6 +1,0 @@
-*.pyc
-.DS_Store
-build/
-dist/
-__pycache__
-*.psd
